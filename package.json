@@ -1,11 +1,12 @@
 {
   "name": "vite-plugin-transform-json",
-  "version": "1.0.0",
+  "version": "1.1",
   "description": "Vite plugin to copy and transform JSON file during build",
   "repository": {
     "url": "https://github.com/KovalchukDanil0/vite-plugin-transform-json.git",
     "type": "git"
   },
+  "homepage": "https://github.com/KovalchukDanil0/vite-plugin-transform-json",
   "main": "dist/index.js",
   "type": "module",
   "types": "dist/index.d.ts",
@@ -29,7 +30,7 @@
   },
   "license": "GPL-3.0-only",
   "devDependencies": {
-    "@types/node": "^22.5.0",
+    "@types/node": "^22.5.1",
     "typescript": "^5.5.4",
     "vite": "^5.4.2"
   }

@@ -6,7 +6,7 @@ Plugin will copy JSON file, to `outDir` directory, named as per input one, durin
 
 Install package from npm
 
-> npm install --save-dev vite-plugin-transform-json
+> npm install -D vite-plugin-transform-json
 
 ## Basic Usage
 
@@ -37,6 +37,10 @@ defineConfig({
             : { page: backgroundPagePath },
         };
       },
+
+      // Optional properties
+      encoding: "utf8",
+      apply: "build",
     }),
   ],
   build: {
