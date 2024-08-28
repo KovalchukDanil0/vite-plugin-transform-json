@@ -4,10 +4,12 @@ import { join, parse } from "path";
 
 export type CopyAndTransformPluginType = {
   srcPath: string;
-  transformedProps: () => Promise<{
+  transformedProps: AsyncOrSyncFunction<{
     [key: string]: string | object | undefined;
   }>;
 };
+
+type AsyncOrSyncFunction<T> = (() => T) | (() => Promise<T>);
 
 export default function viteCopyTransformJson({
   srcPath,
