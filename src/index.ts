@@ -7,23 +7,21 @@ type AsyncOrSyncFunction<T> = (() => T) | (() => Promise<T>);
 export type CopyAndTransformPluginType = {
   srcPath: string;
   transformedProps: AsyncOrSyncFunction<{
-    [key: string]: string | object | undefined;
+    [key: string]: unknown;
   }>;
   encoding?: BufferEncoding;
-  apply?: Plugin["apply"];
 };
 
 export default function viteCopyTransformJson({
   srcPath,
   transformedProps,
   encoding = "utf-8",
-  apply = "build",
 }: CopyAndTransformPluginType): Plugin {
   let config: ResolvedConfig;
 
   return {
     name: "vite-plugin-transform-json",
-    apply, // Apply only during build
+    apply: "build",
 
     configResolved(tempResolve) {
       config = tempResolve;
